@@ -1,0 +1,130 @@
+.Hero {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f8f8f8;
+  animation-name: fadeBackgroundIn;
+  animation-duration: 800ms;
+  animation-delay: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: backwards;
+}
+
+
+
+
+.Hero__inner {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+.Hero h1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 100px;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+
+  transform: translate3d(0, 0px, 0);
+
+  animation-name: textMove;
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
+  animation-delay: 3s;
+  animation-timing-function: cubic-bezier(.77,0,.41,.99);
+
+  & > * {
+    animation-name: letterFadeIn;
+    animation-duration: 400ms;
+    animation-fill-mode: backwards;
+    /* animation-delay: 1 s; */
+    animation-timing-function: cubic-bezier(.77,0,.41,.99);
+  }
+
+  /* & > :first-child {
+    animation-name: none;
+  } */
+}
+
+
+
+
+.Hero p {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-size: 50px;
+  width: 100%;
+  opacity: 1;
+
+  color: #000;
+
+  animation-name: textMoveAndFadeIn;
+  animation-duration: 800ms;
+  animation-fill-mode: backwards;
+  animation-delay: 3s;
+  animation-timing-function: cubic-bezier(.77,0,.41,.99);
+
+  /* & > span {
+    display: block;
+  }
+
+  & > :last-child {
+    font-size: 40px;
+  } */
+}
+
+
+
+@keyframes fadeBackgroundIn {
+  0% {
+    background-color: #000;
+  }
+  100% {
+    background-color: #f8f8f8;
+  }
+}
+
+
+@keyframes textMove {
+  0% {
+    transform: translate3d(0, 25vh, 0);
+  }
+  100% {
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
+@keyframes textMoveAndFadeIn {
+  0% {
+    transform: translate3d(0, 25vh, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes letterFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
