@@ -1,0 +1,64 @@
+.Splash {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  background-color: var(--splash-background);
+  color: var(--splash-color);
+
+  animation-name: fadeOut;
+  animation-duration: var(--splash-fade-duration);
+  animation-delay: var(--splash-delay);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+
+
+
+.Splash > span {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 100px;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  font-weight: 700;
+
+  & > * {
+    animation-name: letterFadeIn;
+    animation-duration: 400ms;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(.77,0,.41,.99);
+  }
+}
+
+
+
+
+@keyframes letterFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -10,6 +10,8 @@ import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
+import Splash from './components/Splash'
+
 import Home from './views/Home'
 import Case from './views/Case'
 
@@ -20,6 +22,7 @@ export default function App() {
         <meta charSet="utf-8" />
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
       </Helmet>
+      <Splash />
       <Switch>
         <Route exact path="/case/:contentId" component={ Case } />
         <Route exact path="/" component={ Home } />

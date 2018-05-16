@@ -1,3 +1,15 @@
 :root {
   --color-background: #f0f;
+
+  /* use ms, because this value is used on js side */
+  --splash-fade-duration: 1000ms;
+  --splash-delay: 2000ms;
+  --splash-background: #000;
+  --splash-color: #fff;
+
+  --hero-delay: 3000ms;
+
+  --header-delay: 5000ms;
+
+  --cases-delay: 5000ms;
 }
