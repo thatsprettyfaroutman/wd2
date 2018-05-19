@@ -24,13 +24,14 @@ class Logo extends Component {
   }
 
   render() {
-    const { animate, className } = this.props
+    const { animate, className, useDefault } = this.props
 
     return (
       <div
         className={ classNames(
           cx['Logo'],
           animate && cx['Logo--animate'],
+          useDefault && cx['Logo--useDefault'],
           className
         )}
       >

@@ -13,8 +13,7 @@ class HelloWorld extends Component {
       <Fragment>
         <Header />
         <Hero
-          lineA="we code and design"
-          lineB="all things digital"
+          text="We code and design"
         />
         <Cases />
       </Fragment>

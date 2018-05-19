@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: calc(var(--spacing) / 2);
+  padding: var(--spacing);
 
   background-color: var(--splash-background);
   color: var(--splash-color);
@@ -17,14 +17,8 @@
   animation-name: fadeOut;
   animation-duration: var(--splash-fade-duration);
   animation-delay: var(--splash-delay);
-  /* animation-delay: 10s; */
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
-}
-@media (--tablet) {
-  .Splash {
-    padding: var(--spacing);
-  }
 }
 
 

@@ -30,6 +30,13 @@
   }
 }
 
+.Logo--useDefault .Logo__grid {
+  display: none;
+}
+
+
+
+
 .Logo__default {
   display: none;
   width: 1000px;
@@ -39,6 +46,10 @@
   .Logo__default {
     display: block;
   }
+}
+
+.Logo--useDefault .Logo__default {
+  display: block;
 }
 
 

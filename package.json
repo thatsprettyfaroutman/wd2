@@ -8,7 +8,7 @@
     "react",
     "ssr"
   ],
-  "author": "Benoit Tremblay <benoit@reactivestack.com>",
+  "author": "Viljami Anttonen",
   "license": "MIT",
   "repository": "reactivestack/parcel-react-ssr",
   "scripts": {

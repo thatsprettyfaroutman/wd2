@@ -1,5 +1,8 @@
 :root {
-  --color-background: #f0f;
+  --color-background: #fff;
+  --color-text-on-background: #303030;
+
+  --color-text-hero-nav: #aaa;
 
   /* use ms, because this value is used on js side */
   --splash-fade-duration: 1000ms;
