@@ -9,7 +9,7 @@
 .Cases__row {
   display: flex;
   flex-direction: column;
-  padding: 0 var(--spacing);
+  padding: 0 calc(var(--spacing) / 2);
 
   transform: translate3d(0, -140px, 0);
 
@@ -28,6 +28,7 @@
   .Cases__row {
     flex-direction: row;
     margin-bottom: var(--spacing);
+    padding: 0 var(--spacing);
 
     & > * {
       margin-bottom: 0;

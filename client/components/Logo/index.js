@@ -29,9 +29,9 @@ class Logo extends Component {
     return (
       <div
         className={ classNames(
-          cx['Logo'],
-          animate && cx['Logo--animate'],
-          useDefault && cx['Logo--useDefault'],
+          'Logo',
+          animate && 'Logo--animate',
+          useDefault && 'Logo--useDefault',
           className
         )}
       >
@@ -46,7 +46,7 @@ class Logo extends Component {
 
 const LogoDefault = ({ letterStyles }) => (
   <svg
-    className={cx['Logo__default']}
+    className="Logo__default"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1000 86.6"
   >
@@ -82,7 +82,7 @@ const LogoDefault = ({ letterStyles }) => (
 
 const LogoGrid = ({ letterStyles }) => (
   <svg
-    className={cx['Logo__grid']}
+    className="Logo__grid"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 222.603 211.957"
   >

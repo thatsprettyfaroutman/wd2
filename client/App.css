@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   height: 100%;
+  line-height: 1.4;
 
 
   & > div {
@@ -13,4 +14,17 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--color-background);
   color: var(--color-text-on-background);
+}
+
+h1 {
+  line-height: 1;
+}
+@media (--tablet) {
+  h1 {
+    line-height: 1.4;
+  }
+}
+
+h2, h3, h4, h5, h6 {
+  line-height: 1.4;
 }

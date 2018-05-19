@@ -1,0 +1,16 @@
+.CaseTitle {
+  font-weight: 700;
+  font-size: 42px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 calc(var(--spacing) / 2);
+  line-height: 1.4;
+}
+@media (--tablet) {
+  .CaseTitle {
+    font-size: 98px;
+    padding: 0 var(--spacing);
+    line-height: 1;
+  }
+}

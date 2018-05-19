@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
 
 
 const Hero = ({ text }) => (
-  <div className={cx['Hero']}>
-    <div className={ cx['Hero__content'] }>
+  <div className="Hero">
+    <div className="Hero__content">
       <h2>{ text }</h2>
       <nav>
         <Link to="#">Cases</Link>

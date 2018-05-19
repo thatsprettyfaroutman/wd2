@@ -1,6 +1,7 @@
-import './index.css'
+import cx from './index.css'
 
 import React, { Component } from 'react'
+import classNames from 'classnames'
 import importedComponent from 'react-imported-component'
 
 
@@ -50,9 +51,9 @@ class Case extends Component {
     )
 
     return (
-      <div className="Case">
+      <article className="Case">
         <Content />
-      </div>
+      </article>
     )
   }
 }

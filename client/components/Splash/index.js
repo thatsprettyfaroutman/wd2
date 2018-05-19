@@ -8,11 +8,6 @@ import Logo from 'Client/components/Logo'
 
 
 
-// const LOGO_TEXT = 'wunderdog'
-// const DELAYS = shuffle(LOGO_TEXT.split('').map((_, i) => i * 100 + 500))
-
-
-
 class Splash extends Component {
   state = {
     clickThrough: false,
@@ -44,28 +39,17 @@ class Splash extends Component {
 
   render() {
     const { clickThrough, remove } = this.state
-    // if ( remove ) return null
+    if ( remove ) return null
     return (
       <div
-        className={cx['Splash']}
+        className="Splash"
         style={ clickThrough ?
            prefixStyles({ pointerEvents: 'none' }) :
            null
          }
       >
-        {/* <span>
-          { LOGO_TEXT.split('').map((letter, i) => (
-            <span
-              key={ `${letter}-${i}` }
-              children={ letter }
-              style={ prefixStyles({
-                animationDelay: `${ DELAYS[i] }ms`,
-              })}
-            />
-          ))}
-        </span> */}
         <Logo
-          className={ cx['Splash__logo'] }
+          className="Splash__logo"
           animate
         />
       </div>

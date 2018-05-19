@@ -18,7 +18,7 @@ class CaseCard extends Component {
     return (
       <Link
         to={ to }
-        className={ cx['CaseCard'] }
+        className="CaseCard"
       >
         <img src={ image } alt={ title } />
         <span>{ title }</span>

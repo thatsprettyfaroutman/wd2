@@ -7,9 +7,9 @@ import Logo from 'Client/components/Logo'
 
 
 const Header = () => (
-  <header className={ cx['Header'] }>
+  <header className="Header">
     <Logo
-      className={ cx['Header__logo'] }
+      className="Header__logo"
       useDefault
     />
   </header>
