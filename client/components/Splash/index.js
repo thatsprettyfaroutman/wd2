@@ -1,15 +1,15 @@
 import cx from './index.css'
 
 import React, { Component } from 'react'
-import shuffle from 'lodash.shuffle'
 import prefixStyles from 'inline-style-prefixer/static'
 import { getCssRootValue } from 'Client/utils'
+import Logo from 'Client/components/Logo'
 
 
 
 
-const LOGO_TEXT = 'wunderdog'
-const DELAYS = shuffle(LOGO_TEXT.split('').map((_, i) => i * 100 + 500))
+// const LOGO_TEXT = 'wunderdog'
+// const DELAYS = shuffle(LOGO_TEXT.split('').map((_, i) => i * 100 + 500))
 
 
 
@@ -44,7 +44,7 @@ class Splash extends Component {
 
   render() {
     const { clickThrough, remove } = this.state
-    if ( remove ) return null
+    // if ( remove ) return null
     return (
       <div
         className={cx['Splash']}
@@ -53,7 +53,7 @@ class Splash extends Component {
            null
          }
       >
-        <span>
+        {/* <span>
           { LOGO_TEXT.split('').map((letter, i) => (
             <span
               key={ `${letter}-${i}` }
@@ -63,7 +63,11 @@ class Splash extends Component {
               })}
             />
           ))}
-        </span>
+        </span> */}
+        <Logo
+          className={ cx['Splash__logo'] }
+          animate
+        />
       </div>
     )
   }

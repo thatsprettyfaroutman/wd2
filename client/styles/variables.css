@@ -12,4 +12,10 @@
   --header-delay: 5000ms;
 
   --cases-delay: 5000ms;
+
+
+  --spacing: 60px;
 }
+
+@custom-media --tablet (width >= 768px);
+@custom-media --desktop (width >= 1024px);
