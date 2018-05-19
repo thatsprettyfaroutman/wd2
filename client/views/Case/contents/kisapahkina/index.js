@@ -6,9 +6,10 @@ const CaseKisapahkina = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>Kisapahkina</title>
+        <title>Kisapahkina | wunderdog</title>
       </Helmet>
-      kisapahkina
+
+      kisapahkinaaa
     </Fragment>
   )
 }

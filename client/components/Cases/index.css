@@ -1,13 +1,15 @@
 .Cases {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
+
+
+
 .Cases__row {
   display: flex;
-  flex-direction: row;
-  margin-bottom: 60px;
-  padding: 0 60px;
+  flex-direction: column;
+  padding: 0 var(--spacing);
 
   transform: translate3d(0, -140px, 0);
 
@@ -17,33 +19,34 @@
   animation-delay: var(--cases-delay);
   animation-timing-function: cubic-bezier(.77,0,.41,.99);
 
-  & > div {
-    flex: 1;
-    display: block;
-    height: 600px;
-    background-color: #ffdd59;
+  & > * {
+    margin-bottom: var(--spacing);
   }
+}
 
-  & > :last-child {
-    margin-left: 60px;
-    background-color: #ef5777;
-    transform: translateY(60px);
-  }
+@media (--tablet) {
+  .Cases__row {
+    flex-direction: row;
+    margin-bottom: var(--spacing);
 
-  &:nth-child(2) {
-    & > div {
-      background-color: #4bcffa;
-    }
-
-    & > :first-child{
-      transform: translateY(20px);
+    & > * {
+      margin-bottom: 0;
     }
 
     & > :last-child {
-      background-color: #34e7e4;
+      margin-left: var(--spacing);
+      transform: translateY(60px);
+    }
+
+    &:nth-child(2) {
+      & > :first-child{
+        transform: translateY(-80px);
+      }
     }
   }
 }
+
+
 
 
 
