@@ -10,7 +10,7 @@ import Header from 'Client/components/Header'
 class HelloWorld extends Component {
 
   componentWillMount() {
-    window.scrollTo(0, 0)
+    if (window) window.scrollTo(0, 0)
   }
 
   render() {

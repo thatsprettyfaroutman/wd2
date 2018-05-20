@@ -22,7 +22,7 @@ class Case extends Component {
 
   componentWillMount() {
     this.loadContent()
-    window.scrollTo(0, 0)
+    if (window) window.scrollTo(0, 0)
   }
 
 

@@ -1,5 +1,7 @@
+console.log('typeof window', typeof window)
+
 if (typeof window === 'undefined') {
-    global.window = {}
+    global.window = null
 }
 
 require('babel-register')({})
