@@ -24,6 +24,11 @@
   }
 }
 
+.Cases--cancelAnimation .Cases__row {
+  animation-name: none;
+  transform: translate3d(0, 0, 0);
+}
+
 @media (--tablet) {
   .Cases__row {
     flex-direction: row;

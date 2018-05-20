@@ -8,6 +8,11 @@ import Cases from 'Client/components/Cases'
 import Header from 'Client/components/Header'
 
 class HelloWorld extends Component {
+
+  componentWillMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
       <Fragment>
