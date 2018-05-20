@@ -5,6 +5,7 @@ import prefixStyles from 'inline-style-prefixer/static'
 import shuffle from 'lodash.shuffle'
 import classNames from 'classnames'
 import root from 'window-or-global'
+import { getCssRootValue } from 'Client/utils'
 
 import CaseCard from 'Client/components/CaseCard'
 
@@ -22,10 +23,18 @@ class Cases extends Component {
   }
   mounted = false
 
-  componentWillMount() {
+  componentDidMount() {
     this.mounted = true
     if ( root.addEventListener )
       root.addEventListener('scroll', this.handleScroll)
+
+    const animationDelay =
+      parseInt(getCssRootValue('--cases-delay') || 5000, 10)
+
+    setTimeout(() => {
+      if ( this.mounted && root.removeEventListener )
+        root.removeEventListener('scroll', this.handleScroll)
+    }, animationDelay)
   }
 
   componentWillUnmount() {
