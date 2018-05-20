@@ -27,7 +27,8 @@
     "react-helmet": "^5.2.0",
     "react-imported-component": "^4.0.1",
     "react-router-dom": "^4.2.2",
-    "tween": "^0.9.0"
+    "tween": "^0.9.0",
+    "window-or-global": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.5.0",

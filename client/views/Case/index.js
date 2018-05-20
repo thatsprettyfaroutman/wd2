@@ -3,6 +3,7 @@ import cx from './index.css'
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import importedComponent from 'react-imported-component'
+import root from 'window-or-global'
 
 
 
@@ -22,7 +23,7 @@ class Case extends Component {
 
   componentWillMount() {
     this.loadContent()
-    if (window) window.scrollTo(0, 0)
+    root.scrollTo(0, 0)
   }
 
 

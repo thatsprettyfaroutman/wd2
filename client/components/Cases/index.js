@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import prefixStyles from 'inline-style-prefixer/static'
 import shuffle from 'lodash.shuffle'
 import classNames from 'classnames'
+import root from 'window-or-global'
 
 import CaseCard from 'Client/components/CaseCard'
 
@@ -23,19 +24,19 @@ class Cases extends Component {
 
   componentWillMount() {
     this.mounted = true
-    if (window) window.addEventListener('scroll', this.handleScroll)
+    root.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount() {
     this.mounted = false
-    if (window) window.removeEventListener('scroll', this.handleScroll)
+    root.removeEventListener('scroll', this.handleScroll)
   }
 
   handleScroll = e => {
     const { cancelAnimation } = this.state
     if (!this.mounted || cancelAnimation) return
     this.setState({ cancelAnimation: true })
-    if (window) window.removeEventListener('scroll', this.handleScroll)
+    root.removeEventListener('scroll', this.handleScroll)
   }
 
   render() {
