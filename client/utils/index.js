@@ -1,6 +1,6 @@
 export const getCssRootValue = prop => {
-  const value = document.body.computedStyleMap().get(prop)
-  console.log(value)
-  if (!value || !value[0]) return null
-  return value[0]
+  if (!window.getComputedStyle) return null
+  let value = window.getComputedStyle(document.body).getPropertyValue(prop)
+  if (typeof value === 'string') value = value.trim()
+  return value
 }
