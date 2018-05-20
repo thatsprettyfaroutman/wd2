@@ -11,7 +11,7 @@ import Header from 'Client/components/Header'
 class HelloWorld extends Component {
 
   componentWillMount() {
-    root.scrollTo(0, 0)
+    if (root.scrollTo) root.scrollTo(0, 0)
   }
 
   render() {

@@ -24,19 +24,22 @@ class Cases extends Component {
 
   componentWillMount() {
     this.mounted = true
-    root.addEventListener('scroll', this.handleScroll)
+    if ( root.addEventListener )
+      root.addEventListener('scroll', this.handleScroll)
   }
 
   componentWillUnmount() {
     this.mounted = false
-    root.removeEventListener('scroll', this.handleScroll)
+    if ( root.removeEventListener )
+      root.removeEventListener('scroll', this.handleScroll)
   }
 
   handleScroll = e => {
     const { cancelAnimation } = this.state
     if (!this.mounted || cancelAnimation) return
     this.setState({ cancelAnimation: true })
-    root.removeEventListener('scroll', this.handleScroll)
+    if ( root.removeEventListener )
+      root.removeEventListener('scroll', this.handleScroll)
   }
 
   render() {
