@@ -1,21 +1,14 @@
 {
-  "name": "parcel-react-ssr",
-  "version": "0.4.0",
-  "description": "Example of SSR with React and ParcelJS",
+  "name": "wd2",
+  "version": "0.0.1",
+  "description": "wd2",
   "main": "index.js",
-  "keywords": [
-    "parcel",
-    "react",
-    "ssr"
-  ],
   "author": "Viljami Anttonen",
-  "license": "MIT",
-  "repository": "reactivestack/parcel-react-ssr",
   "scripts": {
     "dev": "npm run generate-imported-component && parcel client/index.html --no-cache",
     "build": "rimraf dist && npm run generate-imported-component && npm run build-client && npm run build-server",
-    "build-client": "cross-env BABEL_ENV=client parcel build client/index.html -d dist/client --public-url /dist",
-    "build-server": "cross-env BABEL_ENV=server parcel build server/index.js -d dist/server --public-url /dist --target=node8",
+    "build-client": "parcel build client/index.html -d dist/client --public-url /dist",
+    "build-server": "cp -r ./server ./dist/",
     "generate-imported-component": "imported-components client client/imported.js",
     "start": "node dist/server"
   },
