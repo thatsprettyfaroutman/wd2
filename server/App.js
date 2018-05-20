@@ -23,8 +23,8 @@ app.use('/dist', express.static(`${__dirname}/../client`))
 app.get('/*', middleware)
 
 // Check for PORT environment variable, otherwise fallback on Parcel default port
-console.log('PORT', process.env.PORT)
-const PORT = process.env.PORT || 1234
+console.log('PORT', parseInt(process.env.PORT, 10))
+const PORT = parseInt(process.env.PORT, 10) || 1234
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}...`)
 })
