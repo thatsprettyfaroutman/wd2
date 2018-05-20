@@ -1,4 +1,6 @@
-console.log('DISPORT', process.env.PORT)
+if (typeof window === 'undefined') {
+    global.window = {}
+}
 
 require('babel-register')({})
 require('babel-polyfill')
