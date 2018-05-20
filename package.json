@@ -5,10 +5,11 @@
   "main": "index.js",
   "author": "Viljami Anttonen",
   "scripts": {
-    "dev": "npm run generate-imported-component && parcel client/index.html --no-cache",
-    "build": "rimraf dist && npm run generate-imported-component && npm run build-client && npm run build-server",
+    "dev": "yarn generate-imported-component && parcel client/index.html --no-cache",
+    "build": "rimraf dist && yarn generate-imported-component && yarn build-client && yarn build-server",
     "build-client": "parcel build client/index.html --no-cache -d dist/client --public-url /dist",
-    "build-server": "parcel build server/index.js --no-cache -t node -d dist/server --public-url /dist --target=node",
+    "build-server": "parcel build server/index.js --no-cache -t node -d dist/server --public-url /dist --target=node && yarn build-fix-env-port",
+    "build-fix-env-port": "sed 's/1234/process.env.PORT || 1234/g' dist/server/index.js > dist/server/index.js.tmp && mv dist/server/index.js.tmp dist/server/index.js",
     "generate-imported-component": "imported-components client client/imported.js",
     "start": "node dist/server"
   },
