@@ -9,3 +9,8 @@ export const getCssRootValue = prop => {
   if (typeof value === 'string') value = value.trim()
   return value
 }
+
+
+
+export const formatPageTitle = (title, end = 'Wunderdog') =>
+  `${ title ? `${ title } | ` : '' }${ end }`

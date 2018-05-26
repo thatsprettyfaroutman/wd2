@@ -10,7 +10,8 @@
   --color-background: #fff;
   --color-text-on-background: #303030;
 
-  --careers-background-color: #303030;
+  /* --careers-background-color: #303030; */
+  --careers-background-color: #ce0c75;
   --careers-text-color: #fff;
 
   --color-text-hero-nav: #aaa;
@@ -26,6 +27,9 @@
   --card-effect-color: #000;
 
   --spacing: 60px;
+
+
+  --animation-ease: cubic-bezier(.77,0,.41,.99);
 
 
 
@@ -46,11 +50,13 @@
   --text-body-base: {
     font-size: 24px;
     font-weight: 400;
+    letter-spacing: 2px;
   }
 
   --text-body-tablet: {
     font-size: 30px;
     font-weight: 400;
+    letter-spacing: 2px;
   }
 
   /*

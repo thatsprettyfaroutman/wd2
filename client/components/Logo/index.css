@@ -12,7 +12,7 @@
     animation-name: letterFadeIn;
     animation-duration: 400ms;
     animation-fill-mode: backwards;
-    animation-timing-function: cubic-bezier(.77,0,.41,.99);
+    animation-timing-function: var(--animation-ease);
   }
 }
 

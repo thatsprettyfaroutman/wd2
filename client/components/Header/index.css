@@ -32,7 +32,7 @@
   animation-duration: 2000ms;
   animation-fill-mode: backwards;
   animation-delay: var(--header-delay);
-  animation-timing-function: cubic-bezier(.77,0,.41,.99);
+  animation-timing-function: var(--animation-ease);
 
   & > svg > * {
     fill: var(--color-text-on-background);

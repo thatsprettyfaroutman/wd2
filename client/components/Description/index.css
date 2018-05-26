@@ -1,0 +1,10 @@
+.Description {
+  @apply --text-body-base;
+  max-width: 900px;
+  padding: 0 calc(var(--spacing) / 2);
+  text-align: center;
+  @media (--tablet) {
+    @apply --text-body-tablet;
+    padding: 0 var(--spacing);
+  }
+}

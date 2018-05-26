@@ -1,5 +1,4 @@
 .Article {
-
 }
 
 
@@ -7,9 +6,12 @@
 
 .Article > * {
   margin: 0 auto;
-  margin-bottom: calc(var(--spacing) / 2);
+  margin-top: var(--spacing);
   @media (--tablet) {
-    margin-bottom: var(--spacing);
+    margin-top: calc(var(--spacing) * 2);
+  }
+  &:first-child {
+    margin-top: 0;
   }
 }
 
@@ -27,21 +29,15 @@
 
 
 
-
-
-.Article > p {
-  @apply --text-body-base;
-  max-width: 900px;
-  padding: 0 calc(var(--spacing) / 2);
+.Article > .ImageSet + .ImageSet {
+  margin-top: calc(var(--spacing) / 2);
   @media (--tablet) {
-    @apply --text-body-tablet;
-    padding: 0 var(--spacing);
+    margin-top: var(--spacing);
   }
 }
 
 
-
-
+/*
 .Article > div + p,
 .Article > p + div,
 .Article > .ImageSet + .TwoColumns,
@@ -50,4 +46,4 @@
   @media (--tablet) {
     margin-top: calc(var(--spacing) * 2);
   }
-}
+} */

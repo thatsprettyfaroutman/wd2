@@ -2,13 +2,13 @@ import cx from './index.css'
 
 import React from 'react'
 
-const HeroImage = ({ src }) => (
+const FullImage = ({ src }) => (
   <div
-    className="HeroImage"
+    className="FullImage"
     style={{
       backgroundImage: `url(${ src })`
     }}
   />
 )
 
-export default HeroImage
+export default FullImage

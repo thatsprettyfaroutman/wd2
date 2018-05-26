@@ -32,9 +32,6 @@
   }
 }
 
-
-
-
 .TwoColumns__body {
   display: block;
   flex: 1;
@@ -45,4 +42,9 @@
   font-size: 22px;
   margin: 0;
   margin-bottom: calc(var(--spacing) / 2);
+  letter-spacing: 1px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
