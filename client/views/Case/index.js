@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import importedComponent from 'react-imported-component'
 import root from 'window-or-global'
 import Article from 'Client/components/Article'
+import Footer from 'Client/components/Footer'
 
 
 
@@ -56,6 +57,7 @@ class Case extends Component {
     return (
       <Article className="Case">
         <Content />
+        <Footer />
       </Article>
     )
   }

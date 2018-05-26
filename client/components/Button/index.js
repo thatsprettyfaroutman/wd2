@@ -12,17 +12,19 @@ const Button = ({
   children,
   loadingText = 'Loading...',
   ...rest,
-}) => (
-  <Link {...rest}
-    className={classNames(
+}) => {
+  const isExteralLink = to.indexOf('http') === 0
+  return React.createElement(isExteralLink ? 'a' : Link, {
+    [ isExteralLink ? 'href' : 'to' ]: to,
+    className: classNames(
       'Button',
       disabled && 'Button--disabled',
       loading && 'Button--loading',
       className
-    )}
-    to={ to }
-    children={ loading ? loadingText : children }
-  />
-)
+    ),
+    children: loading ? loadingText : children,
+    ...rest,
+  })
+}
 
 export default Button

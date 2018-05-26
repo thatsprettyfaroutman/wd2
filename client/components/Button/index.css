@@ -5,20 +5,29 @@
   border-radius: 0;
   height: 70px;
   min-width: 300px;
-  margin: 0;
   box-sizing: border-box;
-  padding: 0 10px;
+  padding: 0 calc(var(--spacing) / 2);
   border: 2px solid var(--color-text-on-black);
   background-color: ar(--color-black);
   color: inherit;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
+  @media (--tablet) {
+    font-size: 30px
+  }
   font-weight: 700;
   text-decoration: none;
   line-height: 55px;
   letter-spacing: 0.42px;
   transform: scale3d(1, 1, 1);
-  transition: transform var(--animation-time) var(--animation-ease);
+  transition-property: transform background-color;
+  transition-duration: calc(var(--animation-duration) / 8);
+  transition-timing-function: var(--animation-ease);
+
+  &:hover {
+    color: var(--color-black);
+    background-color: var(--color-text-on-black);
+  }
 }
 
 

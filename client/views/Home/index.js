@@ -4,6 +4,7 @@ import React, { Component, Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import root from 'window-or-global'
 import Hero from 'Client/components/Hero'
+import Footer from 'Client/components/Footer'
 import Cases from 'Client/components/Cases'
 import Header from 'Client/components/Header'
 import CtaBox from 'Client/components/CtaBox'
@@ -17,16 +18,17 @@ class HelloWorld extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div className="Home">
         <Header />
-        <Hero text="We code and design" />
+        <Hero />
         <Cases />
         <CtaBox>
           <h1>Join the pack</h1>
           <p>Looking for new opportunities? Check out what challenges Wunderdog has to offer</p>
           <Button to="/careers">Careers</Button>
         </CtaBox>
-      </Fragment>
+        <Footer />
+      </div>
     )
   }
 }

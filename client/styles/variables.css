@@ -4,22 +4,26 @@
 @custom-media --desktop (width >= 1024px);
 
 :root {
+  --color-light: #fff;
   --color-black: #000;
-  --color-text-on-black: #fff;
+  --color-dark: #222;
 
-  --color-background: #fff;
-  --color-text-on-background: #303030;
+  --color-text-on-light: var(--color-dark);
+  --color-text-on-black: var(--color-light);
+  --color-text-on-dark: var(--color-light);
 
-  /* --careers-background-color: #303030; */
-  --careers-background-color: #ce0c75;
-  --careers-text-color: #fff;
+  --color-background: var(--color-light);
+  --color-text-on-background: var(--color-dark);
+
+  --careers-background-color: var(--color-dark);
+  --careers-text-color: var(--color-light);
 
   --color-text-hero-nav: #aaa;
 
   --splash-fade-duration: 1000ms;
   --splash-delay: 2000ms;
   --splash-background: var(--color-black);
-  --splash-color: #fff;
+  --splash-color: var(--color-light);
 
   --header-delay: 4000ms;
 
@@ -28,7 +32,7 @@
 
   --spacing: 60px;
 
-
+  --animation-duration: 800ms;
   --animation-ease: cubic-bezier(.77,0,.41,.99);
 
 

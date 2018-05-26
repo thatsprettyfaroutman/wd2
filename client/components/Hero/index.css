@@ -33,7 +33,7 @@
   opacity: 1;
   text-align: center;
   transition-property: opacity;
-  transition-duration: 800ms;
+  transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-ease);
 }
 @media (--tablet) {
@@ -64,8 +64,8 @@
   max-width: 500px;
   opacity: 1;
   transition-property: opacity;
-  transition-duration: 800ms;
-  transition-delay: 800ms;
+  transition-duration: var(--animation-duration);
+  transition-delay: var(--animation-duration);
   transition-timing-function: var(--animation-ease);
 
   & > a {

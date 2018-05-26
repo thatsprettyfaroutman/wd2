@@ -54,13 +54,14 @@ class Cases extends Component {
   }
 
   maybeNudge = () => {
+    const delay = parseInt(getCssRootValue('--animation-duration'), 10)
     clearTimeout(this.nudgeTimeout)
     this.nudgeTimeout = setTimeout(() => {
       if ( !this.cancelAnimation ) {
         this.setState({ nudge: true })
       }
       removeEventListener('scroll', this.handleScroll)
-    }, 800)
+    }, delay)
   }
 
   render() {

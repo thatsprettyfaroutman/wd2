@@ -1,0 +1,62 @@
+.Footer {
+  background-color: var(--color-black);
+  color: var(--color-text-on-black);
+}
+
+
+
+
+.Footer__contactInfoCards {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1800px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  @media (--tablet) {
+    flex-direction: row;
+  }
+
+  & > * {
+    flex: 1;
+    margin-top: var(--spacing);
+    padding: calc(var(--spacing) / 2);
+
+    @media (--tablet) {
+      margin-right: var(--spacing);
+    }
+
+    &:first-child {
+      margin-top: 0;
+      @media (--tablet) {
+        margin-left: var(--spacing);
+      }
+    }
+  }
+}
+
+
+
+
+.Footer > hr {
+  margin-top: calc(var(--spacing) * 2);
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
+  border-width: 1px;
+  border-color: var(--color-dark);
+}
+
+
+
+
+.Footer > .Logo {
+  padding: var(--spacing);
+  width: 150px;
+  box-sizing: content-box;
+
+  & > svg > * {
+    fill: var(--color-text-on-black);
+  }
+}

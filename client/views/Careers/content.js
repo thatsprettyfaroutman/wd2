@@ -7,6 +7,9 @@ import Title from 'Client/components/Title'
 import Description from 'Client/components/Description'
 import ImageSet from 'Client/components/ImageSet'
 import TwoColumns from 'Client/components/TwoColumns'
+import CtaBox from 'Client/components/CtaBox'
+import Button from 'Client/components/Button'
+
 
 // Images
 import heroImage from 'Client/assets/careers-hero.png'
@@ -77,7 +80,19 @@ const CareersContent = () => (
       </p>
     </TwoColumns>
 
-
+    <CtaBox>
+      <h1>See Our Open Positions</h1>
+      <p>
+        Do you actively follow the evolution of software development? Are you
+        enthusiastic about your work and eager to learn more?
+      </p>
+      <p>
+        At Wunderdog you’ll get to work with other skilled developers in an
+        inspiring environment. Most importantly you can genuinely impact the
+        way we work.
+      </p>
+      <Button to="https://google.com" target="_blank">Apply via RecRight</Button>
+    </CtaBox>
 
 
   </Fragment>

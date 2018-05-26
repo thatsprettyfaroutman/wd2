@@ -1,0 +1,37 @@
+.ContactInfoCard {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+
+.ContactInfoCard > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+
+
+
+.ContactInfoCard > h3 {
+  margin: 0;
+  margin-top: calc(var(--spacing) / 2);
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+
+
+.ContactInfoCard > p {
+  margin: 0;
+  margin-top: calc(var(--spacing) / 2);
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
