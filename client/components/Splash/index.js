@@ -2,18 +2,19 @@ import cx from './index.css'
 
 import React, { Component } from 'react'
 import classNames from 'classnames'
-// import root from 'window-or-global'
+import root from 'window-or-global'
 import noop from 'lodash.noop'
 import withState from 'Client/redux/withState'
 import { getCssRootValue } from 'Client/utils'
 import Logo from 'Client/components/Logo'
 
 
+const scrollTo = root.scrollTo || noop
 
 
 class Splash extends Component {
   static defaultProps = {
-      setSplashShowing: noop,
+    setSplashShowing: noop,
   }
 
   state = {
@@ -24,12 +25,11 @@ class Splash extends Component {
   hideTimeout = null
 
   componentDidMount() {
-    const splashDelay = parseInt(getCssRootValue('--splash-delay'), 10)
+    const splashDelay = parseInt(getCssRootValue('--splash-delay') || 2000, 10)
     this.mounted = true
     this.hideTimeout = setTimeout(this.hide, splashDelay)
     document.body.style.overflow = 'hidden'
     this.props.setSplashShowing(true)
-    // root.addEventListener && root.addEventListener('scroll', this.hide)
   }
 
   componentWillUnmount() {
@@ -37,13 +37,10 @@ class Splash extends Component {
     this.props.setSplashShowing(false)
   }
 
-  handleClick = () => {
-    this.hide()
-  }
-
   hide = () => {
     const { setSplashShowing } = this.props
-    const splashFadeDuration = parseInt(getCssRootValue('--splash-fade-duration'), 10)
+    const splashFadeDuration =
+      parseInt(getCssRootValue('--splash-fade-duration') || 1000, 10)
 
     if ( this.mounted ) {
       this.setState({ hide: true })
@@ -58,7 +55,7 @@ class Splash extends Component {
 
     document.body.style.overflow = ''
     clearTimeout(this.hideTimeout)
-    // root.removeEventListener && root.removeEventListener('scroll', this.hide)
+    scrollTo(0, 0)
   }
 
   render() {
@@ -67,7 +64,7 @@ class Splash extends Component {
     return (
       <div
         className={ classNames('Splash', hide && 'Splash--hide') }
-        onClick={ this.handleClick }
+        onClick={ this.hide }
       >
         <Logo
           className="Splash__logo"

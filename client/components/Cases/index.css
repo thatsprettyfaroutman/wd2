@@ -10,23 +10,22 @@
   display: flex;
   flex-direction: column;
   padding: 0 calc(var(--spacing) / 2);
-
-  transform: translate3d(0, -140px, 0);
-
-  animation-name: caseMove;
-  animation-duration: 800ms;
-  animation-fill-mode: backwards;
-  animation-delay: var(--cases-delay);
-  animation-timing-function: cubic-bezier(.77,0,.41,.99);
+  transform: translate3d(0, 0, 0);
+  transition-property: transform;
+  transition-duration: 800ms;
+  transition-timing-function: cubic-bezier(.77,0,.41,.99);
 
   & > * {
     margin-bottom: var(--spacing);
   }
 }
 
-.Cases--cancelAnimation .Cases__row {
-  animation-name: none;
-  transform: translate3d(0, 0, 0);
+.Cases--nudge .Cases__row {
+  transform: translate3d(0, -140px, 0);
+}
+
+.Cases--nudgeInstant .Cases__row {
+  transition-property: none;
 }
 
 @media (--tablet) {
@@ -49,18 +48,5 @@
         transform: translateY(-80px);
       }
     }
-  }
-}
-
-
-
-
-
-@keyframes caseMove {
-  0% {
-    transform: translate3d(0, calc(25vh - 140px), 0);
-  }
-  100% {
-    transform: translate3d(0, -140px, 0);
   }
 }

@@ -32,17 +32,18 @@
   width: 100%;
   opacity: 1;
   text-align: center;
-
-  animation-name: fadeIn;
-  animation-duration: 800ms;
-  animation-fill-mode: backwards;
-  animation-delay: var(--hero-delay);
-  animation-timing-function: cubic-bezier(.77,0,.41,.99);
+  transition-property: opacity;
+  transition-duration: 800ms;
+  transition-timing-function: cubic-bezier(.77,0,.41,.99);
 }
 @media (--tablet) {
   .Hero__content > h2 {
     font-size: 98px;
   }
+}
+
+.Hero--hide .Hero__content > h2 {
+  opacity: 0;
 }
 
 
@@ -62,12 +63,10 @@
   width: 100%;
   max-width: 500px;
   opacity: 1;
-
-  animation-name: fadeIn;
-  animation-duration: 800ms;
-  animation-fill-mode: backwards;
-  animation-delay: var(--cases-delay);
-  animation-timing-function: cubic-bezier(.77,0,.41,.99);
+  transition-property: opacity;
+  transition-duration: 800ms;
+  transition-delay: 800ms;
+  transition-timing-function: cubic-bezier(.77,0,.41,.99);
 
   & > a {
     color: var(--color-text-hero-nav);
@@ -82,13 +81,6 @@
   }
 }
 
-
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.Hero--hide .Hero__content > nav {
+  opacity: 0;
 }

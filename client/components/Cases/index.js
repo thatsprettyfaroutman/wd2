@@ -2,10 +2,11 @@ import cx from './index.css'
 
 import React, { Component } from 'react'
 import prefixStyles from 'inline-style-prefixer/static'
-import shuffle from 'lodash.shuffle'
+import noop from 'lodash.noop'
 import classNames from 'classnames'
 import root from 'window-or-global'
 import { getCssRootValue } from 'Client/utils'
+import withState from 'Client/redux/withState'
 
 import CaseCard from 'Client/components/CaseCard'
 
@@ -15,47 +16,62 @@ import image3 from 'Client/assets/case3.png'
 import image4 from 'Client/assets/case4.png'
 
 
+const addEventListener = root.addEventListener || noop
+const removeEventListener = root.removeEventListener || noop
 
 
 class Cases extends Component {
   state = {
-    cancelAnimation: false,
+    nudge: false,
+    nudgeInstant: false,
   }
+  cancelAnimation = false
   mounted = false
+  nudgeTimeout = null
 
   componentDidMount() {
     this.mounted = true
-    if ( root.addEventListener )
-      root.addEventListener('scroll', this.handleScroll)
-
-    const animationDelay =
-      parseInt(getCssRootValue('--cases-delay') || 5000, 10)
-
-    setTimeout(() => {
-      if ( this.mounted && root.removeEventListener )
-        root.removeEventListener('scroll', this.handleScroll)
-    }, animationDelay)
+    addEventListener('scroll', this.handleScroll)
+    if ( !this.props.splashShowing ) {
+      this.setState({ nudgeInstant: true, nudge: true })
+    }
   }
 
   componentWillUnmount() {
     this.mounted = false
-    if ( root.removeEventListener )
-      root.removeEventListener('scroll', this.handleScroll)
+    removeEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if ( !nextProps.splashShowing ) {
+      this.maybeNudge()
+    }
   }
 
   handleScroll = e => {
-    const { cancelAnimation } = this.state
-    if (!this.mounted || cancelAnimation) return
-    this.setState({ cancelAnimation: true })
-    if ( root.removeEventListener )
-      root.removeEventListener('scroll', this.handleScroll)
+    this.cancelAnimation = true
+    removeEventListener('scroll', this.handleScroll)
+  }
+
+  maybeNudge = () => {
+    clearTimeout(this.nudgeTimeout)
+    this.nudgeTimeout = setTimeout(() => {
+      if ( !this.cancelAnimation ) {
+        this.setState({ nudge: true })
+      }
+      removeEventListener('scroll', this.handleScroll)
+    }, 800)
   }
 
   render() {
-    const { cancelAnimation } = this.state
+    const { nudge, nudgeInstant } = this.state
 
     return (
-      <div className={ classNames('Cases', cancelAnimation && 'Cases--cancelAnimation') }>
+      <div className={ classNames(
+        'Cases',
+        nudge && 'Cases--nudge',
+        nudgeInstant && 'Cases--nudgeInstant'
+      ) }>
         <div className="Cases__row">
           <CaseCard
             title="Online Healthcare Comparison Tool"
@@ -88,12 +104,9 @@ class Cases extends Component {
     )
   }
 
-
 }
 
 
 
 
-
-
-export default Cases
+export default withState( Cases )
