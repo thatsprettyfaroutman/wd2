@@ -3,17 +3,18 @@
 // It's a nice library you should use!
 
 import 'babel-polyfill'
-
-import cx from './App.css'
+import './App.css'
 
 import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import { Switch, Route, Redirect } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from 'Client/redux/store'
 
-import Splash from './components/Splash'
-
-import Home from './views/Home'
-import Case from './views/Case'
+import Splash from 'Client/components/Splash'
+import Home from 'Client/views/Home'
+import Case from 'Client/views/Case'
+import Careers from 'Client/views/Careers'
 
 export default function App() {
   return (
@@ -22,12 +23,17 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=2.0, shrink-to-fit=no" />
       </Helmet>
-      <Splash />
-      <Switch>
-        <Route exact path="/case/:contentId" component={ Case } />
-        <Route exact path="/" component={ Home } />
-        <Redirect to="/" />
-      </Switch>
+      <Provider store={ store }>
+        <Fragment>
+          <Splash />
+          <Switch>
+            <Route exact path="/case/:contentId" component={ Case } />
+            <Route exact path="/careers/" component={ Careers } />
+            <Route exact path="/" component={ Home } />
+            <Redirect to="/" />
+          </Switch>
+        </Fragment>
+      </Provider>
     </Fragment>
   )
 }

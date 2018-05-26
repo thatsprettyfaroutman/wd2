@@ -10,17 +10,15 @@ import Header from 'Client/components/Header'
 
 class HelloWorld extends Component {
 
-  componentWillMount() {
-    if (root.scrollTo) root.scrollTo(0, 0)
+  componentDidMount() {
+    // if (root.scrollTo) root.scrollTo(0, 0)
   }
 
   render() {
     return (
       <Fragment>
         <Header />
-        <Hero
-          text="We code and design"
-        />
+        <Hero text="We code and design" />
         <Cases />
       </Fragment>
     )

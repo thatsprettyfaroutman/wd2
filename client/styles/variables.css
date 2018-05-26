@@ -1,10 +1,15 @@
+/* Use ms. These value are used on js side aswell */
+
+
 :root {
   --color-background: #fff;
   --color-text-on-background: #303030;
 
+  --careers-background-color: #303030;
+  --careers-text-color: #fff;
+
   --color-text-hero-nav: #aaa;
 
-  /* use ms, because this value is used on js side */
   --splash-fade-duration: 1000ms;
   --splash-delay: 2000ms;
   --splash-background: #000;
@@ -12,12 +17,12 @@
 
   --hero-delay: 3000ms;
 
-  --header-delay: 5000ms;
+  --header-delay: 4000ms;
 
-  --cases-delay: 5000ms;
+  --cases-delay: 4000ms;
 
   --card-effect-duration: 1000ms;
-
+  --card-effect-color: #000;
 
   --spacing: 60px;
 }

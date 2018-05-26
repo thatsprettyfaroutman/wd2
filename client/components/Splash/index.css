@@ -10,15 +10,17 @@
   align-items: center;
   z-index: 1000;
   padding: var(--spacing);
-
   background-color: var(--splash-background);
   color: var(--splash-color);
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: var(--splash-fade-duration);
+  transition-timing-function: ease-in-out;
+}
 
-  animation-name: fadeOut;
-  animation-duration: var(--splash-fade-duration);
-  animation-delay: var(--splash-delay);
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
+.Splash--hide {
+  pointer-events: none;
+  opacity: 0;
 }
 
 

@@ -4,20 +4,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 
 
 
 .Hero__content {
-  padding: calc(var(--spacing) / 2);
-  padding-bottom: 0;
+  padding: 0 calc(var(--spacing) / 2);
 }
 @media (--tablet) {
   .Hero__content {
-    padding: var(--spacing);
-    padding-bottom: 0;
+    padding: 0 var(--spacing);
   }
 }
 

@@ -51,7 +51,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--color-background);
+  background-color: var(--card-effect-color);
   transform-origin: 0 0;
   animation-name: cardEffectAppear;
   animation-duration: var(--card-effect-duration);

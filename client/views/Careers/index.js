@@ -2,21 +2,18 @@ import cx from './index.css'
 
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import importedComponent from 'react-imported-component'
 import root from 'window-or-global'
+import importedComponent from 'react-imported-component'
+import { getCssRootValue } from 'Client/utils'
 import Article from 'Client/components/Article'
 
 
 
 
-const contentMap = {
-  kisapahkina: importedComponent(() => import('./contents/kisapahkina')),
-}
 
 
 
-
-class Case extends Component {
+class Careers extends Component {
   state = {
     showError: false,
     Content: null
@@ -25,19 +22,15 @@ class Case extends Component {
   componentDidMount() {
     this.loadContent()
     if (root.scrollTo) root.scrollTo(0, 0)
+    document.body.classList.add('Body--Careers')
   }
 
+  componentWillUnmount() {
+    document.body.classList.remove('Body--Careers')
+  }
 
   loadContent = () => {
-    const { match } = this.props
-    const contentId = (
-      match
-      && match.params
-      && match.params.contentId
-      && match.params.contentId.toLowerCase()
-    )
-
-    const Content = contentMap[contentId]
+    const Content = importedComponent(() => import('./content.js'))
     if ( !Content ) return this.setState({ showError: true })
     this.setState({ Content })
   }
@@ -46,19 +39,19 @@ class Case extends Component {
     const { Content, showError } = this.state
 
     if ( showError ) return (
-      <div className="Case Case--error">error</div>
+      <div className="Careers Careers--error">error</div>
     )
 
     if ( !Content ) return (
-      <div className="Case Case--loading">loading</div>
+      <div className="Careers Careers--loading">loading</div>
     )
 
     return (
-      <Article className="Case">
+      <Article className="Careers">
         <Content />
       </Article>
     )
   }
 }
 
-export default Case
+export default Careers
