@@ -23,8 +23,8 @@
     flex: 1;
     margin-top: var(--spacing);
     padding: calc(var(--spacing) / 2);
-
     @media (--tablet) {
+      margin-top: 0;
       margin-right: var(--spacing);
     }
 
