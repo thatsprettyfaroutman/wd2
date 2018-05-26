@@ -1,7 +1,12 @@
 /* Use ms. These value are used on js side aswell */
 
+@custom-media --tablet (width >= 768px);
+@custom-media --desktop (width >= 1024px);
 
 :root {
+  --color-black: #000;
+  --color-text-on-black: #fff;
+
   --color-background: #fff;
   --color-text-on-background: #303030;
 
@@ -12,7 +17,7 @@
 
   --splash-fade-duration: 1000ms;
   --splash-delay: 2000ms;
-  --splash-background: #000;
+  --splash-background: var(--color-black);
   --splash-color: #fff;
 
   --header-delay: 4000ms;
@@ -21,7 +26,36 @@
   --card-effect-color: #000;
 
   --spacing: 60px;
-}
 
-@custom-media --tablet (width >= 768px);
-@custom-media --desktop (width >= 1024px);
+
+
+  /* Text sets */
+
+  --text-title-base: {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  --text-title-tablet: {
+    font-size: 98px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  --text-body-base: {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  --text-body-tablet: {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  /*
+    TODO: add text set for subtitle (case card title)
+  */
+
+
+}

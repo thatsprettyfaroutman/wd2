@@ -1,0 +1,38 @@
+.CtaBox {
+  @media(--desktop) {
+    /* padding: 0 var(--spacing); */
+  }
+}
+
+.CtaBox__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--spacing) * 2);
+  background-color: var(--color-black);
+  color: var(--color-text-on-black);
+  max-width: 1800px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.CtaBox__content > * {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  margin-bottom: var(--spacing);
+  max-width: 700px;
+  text-align: center;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.CtaBox__content > :first-child {
+  max-width: none;
+  @apply --text-title-base;
+  @media (--tablet) {
+    @apply --text-title-tablet;
+  }
+}

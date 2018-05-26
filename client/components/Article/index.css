@@ -8,9 +8,7 @@
 .Article > * {
   margin: 0 auto;
   margin-bottom: calc(var(--spacing) / 2);
-}
-@media (--tablet) {
-  .Article > * {
+  @media (--tablet) {
     margin-bottom: var(--spacing);
   }
 }
@@ -21,9 +19,7 @@
 .Article > h1 {
   margin-top: var(--spacing);
   margin-bottom: var(--spacing);
-}
-@media (--tablet) {
-  .Article > h1 {
+  @media (--tablet) {
     margin-top: calc(var(--spacing) * 2);
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -32,15 +28,13 @@
 
 
 
+
 .Article > p {
-  font-size: 24px;
-  font-weight: 400;
+  @apply --text-body-base;
   max-width: 900px;
   padding: 0 calc(var(--spacing) / 2);
-}
-@media (--tablet) {
-  .Article > p {
-    font-size: 30px;
+  @media (--tablet) {
+    @apply --text-body-tablet;
     padding: 0 var(--spacing);
   }
 }
@@ -53,7 +47,6 @@
 .Article > .ImageSet + .TwoColumns,
 .Article > .TwoColumns + .ImageSet {
   margin-top: var(--spacing);
-
   @media (--tablet) {
     margin-top: calc(var(--spacing) * 2);
   }
