@@ -12,7 +12,7 @@
     "build-fix-env-port": "sed 's/1234/process.env.PORT || 1234/g' dist/server/index.js > dist/server/index.js.tmp && mv dist/server/index.js.tmp dist/server/index.js",
     "generate-imported-component": "imported-components client client/imported.js",
     "deploy": "run-s build push-to-heroku",
-    "push-to-heroku": "git add dist/server && git add package.json && git commit -m \"New release\" && git push heroku master",
+    "push-to-heroku": "git add dist && git add package.json && git commit -m \"New release\" && git push heroku master",
     "start": "node dist/server"
   },
   "dependencies": {
