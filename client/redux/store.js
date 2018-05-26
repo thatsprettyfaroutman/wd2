@@ -1,5 +1,6 @@
 import thunk from 'redux-thunk'
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
+import root from 'window-or-global'
 // import pick from 'lodash.pick'
 import * as reducers from './reducers'
 // import { loadState, saveState } from 'Client/utils/localStorage'
@@ -7,7 +8,7 @@ import * as reducers from './reducers'
 const preservedState = {} //loadState()
 
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = root.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   combineReducers(reducers),
   preservedState,
