@@ -15,9 +15,10 @@ const Footer = () => (
       <h1>Let's Talk</h1>
       <p>hello@wunder.dog</p>
     </CtaBox>
+
+
     <div className="Footer__contactInfoCards">
       <ContactInfoCard
-        image={ helsinki }
         title="Helsinki"
       >
         <p>
@@ -27,7 +28,6 @@ const Footer = () => (
         </p>
       </ContactInfoCard>
       <ContactInfoCard
-        image={ helsinki }
         title="Helsinki"
       >
         <p>
@@ -37,7 +37,6 @@ const Footer = () => (
         </p>
       </ContactInfoCard>
       <ContactInfoCard
-        image={ helsinki }
         title="Helsinki"
       >
         <p>

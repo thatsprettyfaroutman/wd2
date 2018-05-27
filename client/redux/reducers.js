@@ -1,5 +1,6 @@
 import {
   SET_SPLASH_SHOWING,
+  SET_BLOG_POSTS,
 } from './types'
 
 
@@ -8,6 +9,20 @@ import {
 export const splashShowing = (state = true, { type, payload }) => {
   switch( type ) {
     case SET_SPLASH_SHOWING:
+      return payload
+
+    default:
+      return state
+  }
+}
+
+
+
+
+
+export const blogPosts = (state = [], { type, payload }) => {
+  switch( type ) {
+    case SET_BLOG_POSTS:
       return payload
 
     default:

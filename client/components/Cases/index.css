@@ -17,6 +17,9 @@
 
   & > * {
     margin-bottom: var(--spacing);
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

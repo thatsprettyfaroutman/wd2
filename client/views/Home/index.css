@@ -1,3 +1,13 @@
+.Home > .BlogPosts {
+  margin-top: var(--spacing);
+  @media (--tablet) {
+    margin-top: calc(var(--spacing) * 2);
+  }
+}
+
 .Home > .Footer {
-  margin-top: calc(var(--spacing) * 5);
+  margin-top: var(--spacing);
+  @media (--tablet) {
+    margin-top: calc(var(--spacing) * 2);
+  }
 }

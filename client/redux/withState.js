@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import throttle from 'lodash.throttle'
 import {
   setSplashShowing,
+  getBlogPosts,
 } from './actions'
 
 
@@ -14,10 +15,12 @@ import {
 
 const mapStateToProps = state => ({
   splashShowing: state.splashShowing,
+  blogPosts: state.blogPosts,
 })
 
 const mapDispatchToProps = dispatch => ({
   setSplashShowing: (...params) => dispatch(setSplashShowing(...params)),
+  getBlogPosts: (...params) => dispatch(getBlogPosts(...params)),
 })
 
 

@@ -11,7 +11,9 @@ class ContactInfoCard extends Component {
     } = this.props
     return (
       <div className="ContactInfoCard">
-        <img src={ image } alt={ title } />
+        { image && (
+          <img src={ image } alt={ title } />
+        )}
         <h3>{ title }</h3>
         { children }
       </div>

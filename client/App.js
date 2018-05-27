@@ -9,12 +9,23 @@ import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import store from 'Client/redux/store'
+import { getBlogPosts } from 'Client/redux/actions'
+import store, { dispatch } from 'Client/redux/store'
 
 import Splash from 'Client/components/Splash'
 import Home from 'Client/views/Home'
 import Case from 'Client/views/Case'
 import Careers from 'Client/views/Careers'
+import 'Client/api'
+
+
+
+
+// Get blogposts
+dispatch( getBlogPosts() )
+
+
+
 
 export default function App() {
   return (

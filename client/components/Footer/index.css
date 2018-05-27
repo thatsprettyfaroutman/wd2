@@ -24,6 +24,7 @@
     margin-top: var(--spacing);
     padding: calc(var(--spacing) / 2);
     @media (--tablet) {
+      padding: 0;
       margin-top: 0;
       margin-right: var(--spacing);
     }
@@ -55,6 +56,10 @@
   padding: var(--spacing);
   width: 150px;
   box-sizing: content-box;
+  margin: 0 auto;
+  @media (--tablet) {
+    margin: 0;
+  }
 
   & > svg > * {
     fill: var(--color-text-on-black);

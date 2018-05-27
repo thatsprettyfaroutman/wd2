@@ -9,6 +9,7 @@ import Cases from 'Client/components/Cases'
 import Header from 'Client/components/Header'
 import CtaBox from 'Client/components/CtaBox'
 import Button from 'Client/components/Button'
+import BlogPosts from 'Client/components/BlogPosts'
 
 class HelloWorld extends Component {
 
@@ -27,6 +28,7 @@ class HelloWorld extends Component {
           <p>Looking for new opportunities? Check out what challenges Wunderdog has to offer</p>
           <Button to="/careers">Careers</Button>
         </CtaBox>
+        <BlogPosts />
         <Footer />
       </div>
     )

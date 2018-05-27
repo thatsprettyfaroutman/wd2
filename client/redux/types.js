@@ -1,1 +1,2 @@
 export const SET_SPLASH_SHOWING = 'SET_SPLASH_SHOWING'
+export const SET_BLOG_POSTS = 'SET_BLOG_POSTS'
