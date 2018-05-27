@@ -3,6 +3,7 @@ import './index.css'
 import React, { Component, Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import root from 'window-or-global'
+import { formatPageTitle } from 'Client/utils'
 import Hero from 'Client/components/Hero'
 import Footer from 'Client/components/Footer'
 import Cases from 'Client/components/Cases'
@@ -11,7 +12,7 @@ import CtaBox from 'Client/components/CtaBox'
 import Button from 'Client/components/Button'
 import BlogPosts from 'Client/components/BlogPosts'
 
-class HelloWorld extends Component {
+class Home extends Component {
 
   componentDidMount() {
     // if (root.scrollTo) root.scrollTo(0, 0)
@@ -20,6 +21,9 @@ class HelloWorld extends Component {
   render() {
     return (
       <div className="Home">
+        <Helmet>
+          <title>{ formatPageTitle('We code and design') }</title>
+        </Helmet>
         <Header />
         <Hero />
         <Cases />
@@ -38,4 +42,4 @@ class HelloWorld extends Component {
 
 
 
-export default HelloWorld
+export default Home

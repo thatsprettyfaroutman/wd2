@@ -23,7 +23,7 @@ const CareersContent = () => (
       <title>{ formatPageTitle('Join the Pack') }</title>
     </Helmet>
 
-    <FullImage src={ heroImage } />
+    <FullImage src={ heroImage } animate />
     <Title>Join the Pack</Title>
     <Description>
       At Wunderdog our developers and designers are the centre of everything.

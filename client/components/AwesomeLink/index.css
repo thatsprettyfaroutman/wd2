@@ -1,0 +1,25 @@
+.AwesomeLink__effect {
+  position: fixed;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-black);
+  transform-origin: 0 0;
+  animation-name: AwesomeLinkEffectAppear;
+  animation-duration: var(--animation-duration);
+  animation-timing-function: var(--animation-ease);
+  animation-fill-mode: both;
+}
+
+
+@keyframes AwesomeLinkEffectAppear {
+  0% {
+    transform: scale3d(1, 0, 1);
+  }
+  100% {
+    transform-origin: 0 0;
+    transform: scale3d(1, 1, 1);
+  }
+}

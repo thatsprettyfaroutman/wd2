@@ -29,7 +29,7 @@
 
   --header-delay: 4000ms;
 
-  --card-effect-duration: 1000ms;
+  --card-effect-duration: 800ms;
   --card-effect-color: #000;
 
   --spacing: 60px;
@@ -75,9 +75,6 @@
     letter-spacing: 2px;
   }
 
-  /*
-    TODO: add text set for subtitle (case card title)
-  */
 
 
 }

@@ -24,7 +24,7 @@ const CaseKisapahkina = () => (
       <title>{ formatPageTitle('Kisapähkinä') }</title>
     </Helmet>
 
-    <FullImage src={ heroImage } />
+    <FullImage src={ heroImage } animate />
     <Title>Online Healthcare Comparison Tool</Title>
     <Description>
       But I must explain to you how all this mistaken idea of denouncing
